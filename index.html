@@ -14,6 +14,17 @@
     <!-- daisy and tailwind links -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .raleway-font {
+            font-family: "Raleway", sans-serif;
+        }
+
+        li {
+            display: flex;
+
+            justify-content: space-between;
+        }
+    </style>
 </head>
 
 <body class="raleway-font">
@@ -50,7 +61,8 @@
                 </ul>
             </div>
             <div class="navbar-end gap-4">
-                <a  onclick="" class="btn text-green-400 text-xl px-8 font-bold bg-green-100 border-green-400 border-1 ">Bus <img
+                <a onclick=""
+                    class="btn text-green-400 text-xl px-8 font-bold bg-green-100 border-green-400 border-1 ">Bus <img
                         src="images/bus-icon.png" alt=""></a>
             </div>
         </div>
@@ -71,7 +83,8 @@
                         blending luxury and exploration. Expert guides ensure seamless experiences, unveiling hidden
                         gems worldwide. From cultural escapades to thrilling expeditions, let us redefine your travel
                         narrative. Your next extraordinary adventure awaits with us</p>
-                    <a class="btn px-8 font-bold border-none bg-green-500 text-black lg:w-36 lg:mt-8 lg:mb-40">Buy
+                    <a href="#BuyTicket"
+                        class="btn px-8 font-bold border-none bg-green-500 text-black lg:w-36 lg:mt-8 lg:mb-40">Buy
                         Tickets</a>
 
                 </div>
@@ -131,7 +144,8 @@
         <!-- paribahan Section first part start -->
 
 
-        <section class=" bg-[#F7F8F8] border-t-green-500 border-x-green-500 border-2 rounded-3xl rounded-b-none mt-16">
+        <section id="BuyTicket"
+            class=" bg-[#F7F8F8] border-t-green-500 border-x-green-500 border-2 rounded-3xl rounded-b-none mt-16">
 
             <div class="container w-11/12 mx-auto">
                 <h1 class="text-center text-4xl font-bold text-black mt-16 ">Ena Paribahan</h1>
@@ -164,7 +178,7 @@
                                 <div>
                                     <div class="flex lg:p-4 gap-2 bg-green-200 rounded-2xl text-[#1DD100]">
                                         <img src="images/seat-green.png" alt="">
-                                        <h3 class="font-bold"><span>40</span> Seats left</h3>
+                                        <h3 class="font-bold"><span id="seatLeft">40</span> Seats left</h3>
                                     </div>
 
 
@@ -193,11 +207,13 @@
                                                     Laxmipur</p>
                                             </div>
                                             <div class="bg-gray-200 rounded-xl mb-4 lg:mb-0">
-                                                <p class="font-semibold text-gray-900 p-5 lg:px-8">Dropping Point - Bogura
+                                                <p class="font-semibold text-gray-900 p-5 lg:px-8">Dropping Point -
+                                                    Bogura
                                                 </p>
                                             </div>
                                             <div class="bg-gray-200 rounded-xl">
-                                                <p class="font-semibold text-gray-900 p-5 lg:px-8">Est. Time - 11 Hour</p>
+                                                <p class="font-semibold text-gray-900 p-5 lg:px-8">Est. Time - 11 Hour
+                                                </p>
                                             </div>
 
                                         </div>
@@ -216,7 +232,7 @@
                     </div>
                     <img class="hidden lg:block" src="images/info-devider.png" alt="">
 
-                    
+
 
                     <div class="ml-32 lg:ml-0 w-2/5 flex items-center justify-center">
                         <div class="flex flex-col w-full content-center lg:text-center">
@@ -225,7 +241,7 @@
 
                             </div>
 
-                            <p class="text-3xl font-bold">550 Taka</p>
+                            <p class="text-3xl font-bold"><span id="priceOfOneTicket">550</span> Taka</p>
                             <p class="text-2xl lg:ml-0 ml-4">Per Seat</p>
                         </div>
 
@@ -457,7 +473,7 @@
 
 
                     </div>
-                    
+
 
                     <!-- select seat second part start -->
                     <div class="lg:w-2/5">
@@ -465,7 +481,7 @@
                         <hr class="border-dashed text-black border-1  my-6">
                         <div class="bg-[#F7F8F8]  rounded-2xl p-10">
                             <div class="flex justify-between ">
-                                <h6 class="text-lg  font-semibold text-black mt-4">Seat <span id="ticket-count"
+                                <h6 class="text-lg  font-semibold text-black mt-4">Seat <span id="ticketTake"
                                         class="text-green-400">0</span></h6>
                                 <h6 class="text-lg font-semibold text-black mt-4">Class</h6>
                                 <h6 class="text-lg  font-semibold text-black mt-4">Price</h6>
@@ -483,22 +499,33 @@
                             <hr class="border-dashed text-black border-1  mt-6 mb-4">
                             <div class="flex justify-between mb-8">
                                 <h6 class="text-lg  font-semibold text-black">Total Price</h6>
-                                <h6 class="text-lg  font-semibold text-black">BDT<span>0</span>
+                                <h6 class="text-lg  font-semibold text-black">BDT<span id="totalAmount">0</span>
                                 </h6>
 
 
                             </div>
-                            <div class=" ">
-                                <label class="input input-bordered flex items-center gap-2 border-none">
-                                    <input type="text" class="grow bg-white border-none " placeholder="Have any coupon?" />
-                                    <button class="btn text-white text-lg font-semibold bg-green-500">Apply</button>
-                                </label>
+                            <div id="container">
+                                <ul id="create-container1">
+
+                                </ul>
+
+
+                            </div>
+
+                            <div id="FirstInput" class="mb-4 join w-full">
+
+                                <input id="couponText" type="text"
+                                    class="input input-bordered join-item bg-white border-none w-full"
+                                    placeholder="Have any coupon?" />
+                                <button id="coupon15"
+                                    class="btn join-item text-white text-lg font-semibold bg-green-500 ">Apply</button>
+
                             </div>
                             <div class="flex justify-between mt-5">
                                 <h6 class="text-lg  font-semibold text-black">Grand Total</h6>
-                                <h6 class="text-lg font-semibold text-black">BDT<span id="grand-total">0</span></h6>
-            
-            
+                                <h6 class="text-lg font-semibold text-black">BDT<span id="finalTotal">0</span></h6>
+
+
                             </div>
 
 
@@ -507,30 +534,37 @@
                         </div>
                         <div class="mb-4 mt-6">
                             <label for="" class="text-lg font-bold text-black mb-2">Passenger Name*</label>
-                            <input type="text" placeholder="Enter your name" class="input input-bordered w-full border-none shadow mt-3" />
+                            <input type="text" placeholder="Enter your name"
+                                class="input input-bordered w-full border-none shadow mt-3" />
                         </div>
                         <div class="mb-4 mt-6">
                             <label for="" class="text-lg font-bold text-black mb-2">Phone Number*</label>
                             <input type="number" placeholder="Enter your phone number"
-                            class="input input-bordered w-full border-none shadow mt-3"/>
+                                class="input input-bordered w-full border-none shadow mt-3" />
                         </div>
                         <div class="mb-4 mt-6">
                             <label for="" class="text-lg font-bold text-black mb-2">Email ID</label>
-                            <input type="email" placeholder="Enter your email id" class="input input-bordered w-full border-none shadow mt-3" />
+                            <input type="email" placeholder="Enter your email id"
+                                class="input input-bordered w-full border-none shadow mt-3" />
                         </div>
                         <div>
                             <!-- Open the modal using ID.showModal() method -->
-                            <button class="btn bg-green-500 text-white text-xl font-extrabold rounded-2xl w-full mb-4" onclick="my_modal_1.showModal()">Next</button>
+                            <button class="btn bg-green-500 text-white text-xl font-extrabold rounded-2xl w-full mb-4"
+                                onclick="my_modal_1.showModal()">Next</button>
                             <dialog id="my_modal_1" class="modal">
                                 <div class="modal-box flex flex-col justify-center items-center">
                                     <img src="images/success.png" alt="">
                                     <h3 class="font-bold text-lg my-4">SUCCESS</h3>
-                                    <p class="py-2 text-xl text-black font-medium text-center">Thank you for Booking Our Bus Seats. We are working hard to find the best service and deals for you. <br>
-                                        <span class="text-xl font-normal text-gray-500 text-center">Shortly you will find a confirmation in your email.</span></p>
+                                    <p class="py-2 text-xl text-black font-medium text-center">Thank you for Booking Our
+                                        Bus Seats. We are working hard to find the best service and deals for you. <br>
+                                        <span class="text-xl font-normal text-gray-500 text-center">Shortly you will
+                                            find a confirmation in your email.</span>
+                                    </p>
                                     <div class="modal-action">
                                         <form method="dialog">
                                             <!-- if there is a button in form, it will close the modal -->
-                                            <button class="btn text-xl text-white font-semibold bg-green-500 rounded-full">Continue</button>
+                                            <button
+                                                class="btn text-xl text-white font-semibold bg-green-500 rounded-full">Continue</button>
                                         </form>
                                     </div>
                                 </div>
@@ -550,7 +584,7 @@
 
             </div>
 
-           
+
 
             <!-- select your seat ends here -->
 
@@ -560,7 +594,7 @@
 
 
 
-          
+
 
 
 
@@ -578,6 +612,7 @@
     <footer>
 
     </footer>
+    <script src="./action.js"></script>
 </body>
 
 </html>
