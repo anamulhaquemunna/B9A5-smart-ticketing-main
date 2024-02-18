@@ -61,8 +61,8 @@ for (const chair of availableSeat) {
   
   }
 
-  else{
-    alert("You can not take one item more then 1 times");
+  else if ( count>= 4){
+    alert("you can not buy more than 4 tickets");
   }
 
 
@@ -130,7 +130,7 @@ cuponBtn.addEventListener('click', function () {
 
     }
     else {
-      alert("Invalid Coupon Code");
+      alert("Please type a valid coupon code");
       document.getElementById('couponText').value = "";
     }
   }
