@@ -62,7 +62,7 @@ for (const chair of availableSeat) {
   }
 
   else{
-    alert("You can not take more then 4");
+    alert("You can not take one item more then 1 times");
   }
 
 
