@@ -13,9 +13,9 @@ for (const chair of availableSeat) {
     setElement('ticketTake', count);
 
     
-    const seatBooked = parseInt(document.getElementById('seatLeft').innerText);
+    const seatBooked = parseInt(document.getElementById('unbookedSeat').innerText);
     const seatAvailable = seatBooked - 1;
-    setElement('seatLeft', seatAvailable);
+    setElement('unbookedSeat', seatAvailable);
 
 
     
@@ -39,24 +39,24 @@ for (const chair of availableSeat) {
    
 
     const total = document.getElementById('totalAmount').innerText;
-    const convertedTotal = parseInt(total);
+    const afterConvertTheTotal = parseInt(total);
 
-    const updatedTotal = convertedTotal + convertedPrice;
+    const updatedTotal = afterConvertTheTotal + convertedPrice;
     setElement('totalAmount', updatedTotal);
 
   
 
-    const grandTotal = parseInt(document.getElementById('finalTotal').innerText);
-    const updatedGrandTotal = grandTotal + convertedPrice;
-    setElement('finalTotal', updatedGrandTotal);
+    const convertGrandTotal = parseInt(document.getElementById('finalTotal').innerText);
+    const afterGettingTheDiscount = convertGrandTotal + convertedPrice;
+    setElement('finalTotal', afterGettingTheDiscount);
 
    
     if(count >= 4){
-      cuponBtn.disabled = false;
+      couponApplyButton.disabled = false;
   
     }
     else{
-      cuponBtn.disabled = true;
+      couponApplyButton.disabled = true;
     }
   
   }
@@ -83,50 +83,48 @@ function setElement(id, value) {
 
 
 
-const cuponBtn = document.getElementById('coupon15');
+const couponApplyButton = document.getElementById('coupon15');
 
-cuponBtn.addEventListener('click', function () {
+couponApplyButton.addEventListener('click', function () {
 
-  const cuponCode = document.getElementById('couponText').value;
+  const OfferCode = document.getElementById('couponText').value;
   const totalPrice = document.getElementById('totalAmount').innerText;
   const grandTotal1 = parseInt(document.getElementById('finalTotal').innerText);
   if (count >= 4) {
-    if (cuponCode === "NEW15") {
-      const createList1 = document.getElementById('create-container1');
+    if (OfferCode === "NEW15") {
+      const firstCreateList = document.getElementById('create-container1');
       const li = document.createElement('li');
       const p = document.createElement('p');
       p.innerText = "Discount Price";
       const p2 = document.createElement('p');
       const discountPrice = totalPrice * 0.15;
-      console.log(discountPrice);
       p2.innerText = discountPrice;
       li.appendChild(p);
       li.appendChild(p2);
-      createList1.appendChild(li);
+      firstCreateList.appendChild(li);
       const restTotal = document.getElementById('finalTotal');
       restTotal.innerText = grandTotal1 - discountPrice;
       document.getElementById('couponText').value = "";
-      const cuponInput = document.getElementById('FirstInput');
-      cuponInput.classList.add('hidden');
+      const offerTextInput = document.getElementById('FirstInput');
+      offerTextInput.classList.add('hidden');
 
     }
-    else if(cuponCode === "Couple 20"){
-      const createList1 = document.getElementById('create-container1');
+    else if(OfferCode === "Couple 20"){
+      const firstCreateList = document.getElementById('create-container1');
       const li = document.createElement('li');
       const p = document.createElement('p');
       p.innerText = "Discount Price";
       const p2 = document.createElement('p');
       const discountPrice = totalPrice * 0.20;
-      console.log(discountPrice);
       p2.innerText = discountPrice;
       li.appendChild(p);
       li.appendChild(p2);
-      createList1.appendChild(li);
+      firstCreateList.appendChild(li);
       const restTotal = document.getElementById('finalTotal');
       restTotal.innerText = grandTotal1 - discountPrice;
       document.getElementById('couponText').value = "";
-      const cuponInput = document.getElementById('FirstInput');
-      cuponInput.classList.add('hidden');
+      const offerTextInput = document.getElementById('FirstInput');
+      offerTextInput.classList.add('hidden');
 
     }
     else {
