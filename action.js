@@ -7,6 +7,7 @@ for (const chair of availableSeat) {
       
    
     e.target.classList.add('bg-green-400');
+    e.target.classList.add('text-white');
    
     chair.classList.add('booked');
     count = count + 1;
@@ -89,7 +90,7 @@ couponApplyButton.addEventListener('click', function () {
 
   const OfferCode = document.getElementById('couponText').value;
   const totalPrice = document.getElementById('totalAmount').innerText;
-  const grandTotal1 = parseInt(document.getElementById('finalTotal').innerText);
+  const FirstGrandTotal = parseInt(document.getElementById('finalTotal').innerText);
   if (count >= 4) {
     if (OfferCode === "NEW15") {
       const firstCreateList = document.getElementById('create-container1');
@@ -103,7 +104,7 @@ couponApplyButton.addEventListener('click', function () {
       li.appendChild(p2);
       firstCreateList.appendChild(li);
       const restTotal = document.getElementById('finalTotal');
-      restTotal.innerText = grandTotal1 - discountPrice;
+      restTotal.innerText = FirstGrandTotal - discountPrice;
       document.getElementById('couponText').value = "";
       const offerTextInput = document.getElementById('FirstInput');
       offerTextInput.classList.add('hidden');
@@ -121,7 +122,7 @@ couponApplyButton.addEventListener('click', function () {
       li.appendChild(p2);
       firstCreateList.appendChild(li);
       const restTotal = document.getElementById('finalTotal');
-      restTotal.innerText = grandTotal1 - discountPrice;
+      restTotal.innerText = FirstGrandTotal - discountPrice;
       document.getElementById('couponText').value = "";
       const offerTextInput = document.getElementById('FirstInput');
       offerTextInput.classList.add('hidden');
